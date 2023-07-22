@@ -17,7 +17,8 @@ const readFilePro = (file) => {
 const writeFilePro = (file, data) => {
   return new Promise((resolve, reject) => {
     fs.writeFile(file, data, (err) => {
-      console.log(`File has been written`);
+      if (err) reject("Couldn't write the file");
+      resolve("Success");
     });
   });
 };
@@ -34,10 +35,20 @@ const getDogPic = async () => {
     console.log(`File has been written`);
   } catch (err) {
     console.log(err);
+    throw err;
   }
+  return `2: Ready 🔥`;
 };
 
-getDogPic();
+console.log(`1 : Will I get the Dog Pic`);
+getDogPic()
+  .then((x) => {
+    console.log(x);
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log(`3: Get the Dog Pic`);
+  });
 // readFilePro(`${__dirname}/dog.txt`)
 //   .then((data) => {
 //     console.log(`Breed : ${data}`);

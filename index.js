@@ -40,6 +40,20 @@ const getDogPic = async () => {
   return `2: Ready 🔥`;
 };
 
+// IFEE
+(async () => {
+  try {
+    console.log(`1 : Will I get the Dog Pic`);
+    const x = await getDogPic();
+    console.log(x);
+    console.log(`3: Get the Dog Pic`);
+  } catch (err) {
+    console.log(err);
+  }
+})();
+
+// Return Promise and Consume the new Promise
+/* 
 console.log(`1 : Will I get the Dog Pic`);
 getDogPic()
   .then((x) => {
@@ -49,23 +63,30 @@ getDogPic()
     console.log(err);
     console.log(`3: Get the Dog Pic`);
   });
-// readFilePro(`${__dirname}/dog.txt`)
-//   .then((data) => {
-//     console.log(`Breed : ${data}`);
-//     return superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);
-//   })
-//   .then((res) => {
-//     console.log(res.body.message);
-//     return writeFilePro(`${__dirname}/dog-img.txt`, res.body.message);
-//   })
-//   .then(() => {
-//     console.log(`File has been written`);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-//Call Back Hell
-// fs.readFile(`${__dirname}/dog.txt`, (err, data) => {
-//   if (err) return console.log(`I couldn't find that file`);
+  */
 
-// });
+//   then Method
+/*
+readFilePro(`${__dirname}/dog.txt`)
+  .then((data) => {
+    console.log(`Breed : ${data}`);
+    return superagent.get(`https://dog.ceo/api/breed/${data}/images/random`);
+  })
+  .then((res) => {
+    console.log(res.body.message);
+    return writeFilePro(`${__dirname}/dog-img.txt`, res.body.message);
+  })
+  .then(() => {
+    console.log(`File has been written`);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  */
+//Call Back Hell
+/*
+fs.readFile(`${__dirname}/dog.txt`, (err, data) => {
+  if (err) return console.log(`I couldn't find that file`);
+
+});
+*/
